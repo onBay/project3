@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.use(ejsLayouts);
 
-app.use("/auth", authRoutes);
 
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({

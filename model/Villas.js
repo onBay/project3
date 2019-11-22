@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
 
 const villaSchema = mongoose.Schema({
-    Name:
+    name:
     {
         type: String,
         required: true
     },
-    Owner: {
+    owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    City:{
+    city:{
         type:String
     },
     pricePerNight:{type: Number},
