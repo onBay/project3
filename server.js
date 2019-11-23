@@ -6,10 +6,16 @@ const dotenv = require("dotenv/config");
 const session = require('express-session')
 const passport = require('passport')
 const userRoutes = require("./routes/userRoute")
+const villaRoutes = require("./routes/villasRoutes")
+const cors = require('cors')
+
+
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(cors())
 
 app.set("view engine", "ejs");
 app.use(ejsLayouts);
@@ -40,5 +46,6 @@ mongoose.connect(
 
 
 app.use("/user",userRoutes)
+app.use("/villa",villaRoutes)
 
-app.listen(5100, () => console.log("express running"));
+app.listen(4000, () => console.log("express running"));
